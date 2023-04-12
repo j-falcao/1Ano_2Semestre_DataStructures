@@ -20,6 +20,7 @@ REGISTO_UTILIZADORES *LerFicheiro(int *nReg, char* nomeFicheiro){
             *nReg = i-1;
             return R;
         }
+        
 
         size_t len;
         fread(&len, sizeof(size_t), 1, f);
