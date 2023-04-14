@@ -28,7 +28,7 @@ NO* criarNO(Conta* info){
 
 void addEsq(NO* raiz, NO* novo){
     if(!raiz->esq)
-        raiz->dir = novo;
+        raiz->esq = novo;
     else if(novo->info->balanco > raiz->esq->info->balanco)
         addDir(raiz->esq, novo);
     else if(novo->info->balanco < raiz->esq->info->balanco)
@@ -56,9 +56,9 @@ void addElem(Arvore* A, NO* no){
         novo->info = no;
     }
     else{
-        if(no->info->balanco > A->raiz)
+        if(no->info->balanco > A->raiz->info->balanco)
             addDir(A->raiz, no);
-        else if(no->info->balanco < A->raiz)
+        else if(no->info->balanco < A->raiz->info->balanco)
             addEsq(A->raiz, no);
     }
 }
