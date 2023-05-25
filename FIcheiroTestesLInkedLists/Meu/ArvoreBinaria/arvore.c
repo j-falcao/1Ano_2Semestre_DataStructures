@@ -13,6 +13,7 @@ void mostrarArvoreRecursivo(NO* Elemento){
 }
 
 void mostrarOrderedArvore(Arvore* A){
+    if(!A) return;
     mostrarArvoreRecursivo(A->raiz);
 }
 
@@ -41,8 +42,6 @@ void addDir(NO* raiz, NO* novo){
     else if(novo->info->balanco < raiz->dir->info->balanco)
         addEsq(raiz->dir, novo);
 }
-
-
 
 void addElem(Arvore* A, NO* no){
     if(!A||!no) return;
