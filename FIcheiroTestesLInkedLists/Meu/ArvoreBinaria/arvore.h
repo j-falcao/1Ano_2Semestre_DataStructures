@@ -15,6 +15,7 @@ void mostrarArvore(Arvore* A);
 void addElem(Arvore* A, NO* info);
 void remElem(Arvore* A, NO* info);
 void pesquisa(Arvore* A, NO* info);
+void inverterOrdenacao(NO* raiz);
 void destruir(Arvore* A);
 
 

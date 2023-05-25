@@ -10,10 +10,8 @@ Arvore* CriarArvore(){
 void mostrarArvoreRecursivo(NO* Elemento){
     if(Elemento->esq == NULL)
         MostrarConta(Elemento->info);
-    
-
-    
 }
+
 void mostrarOrderedArvore(Arvore* A){
     mostrarArvoreRecursivo(A->raiz);
 }
@@ -62,6 +60,16 @@ void addElem(Arvore* A, NO* no){
             addEsq(A->raiz, no);
     }
 }
+
+void inverterOrdenacao(NO* raiz){
+    if(!raiz) return;
+    NO* aux = raiz->esq;
+    raiz->esq = raiz->dir;
+    raiz->dir = aux;
+    inverterOrdenacao(raiz->esq);
+    inverterOrdenacao(raiz->dir);
+}
+
 
 void travessia(NO* Aux, NO* objetivo){
     
