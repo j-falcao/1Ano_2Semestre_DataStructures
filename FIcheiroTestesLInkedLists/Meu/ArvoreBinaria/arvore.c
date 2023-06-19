@@ -69,6 +69,12 @@ void inverterOrdenacao(NO* raiz){
     inverterOrdenacao(raiz->dir);
 }
 
+int numVerticesNivel(NO* raiz, int nivel){
+    if(!nivel && !raiz){
+        return 1;
+    }
+    return numVerticesNivel(raiz->esq, nivel-1) + numVerticesNivel(raiz->dir, nivel-1);
+}
 
 void travessia(NO* Aux, NO* objetivo){
     
