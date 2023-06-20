@@ -10,7 +10,7 @@ void criarElemento(){
 }
 
 void ler_elemento(Elemento eleNovo){
-
+    
 }
 
 int compararElementosIdade(Elemento A, Elemento B){
