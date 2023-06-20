@@ -9,4 +9,6 @@ typedef struct{
     float peso_quilos, altura_metros;
 }Pessoa;
 
+Pessoa gerarPessoaAleatoria();
+
 #endif
