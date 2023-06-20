@@ -1,11 +1,11 @@
 #include "Hashing.h"
 
 
-void inicializarVectorHashing(Hashing H){
+void inicializarVectorHashing(Hashing*H){
 
 }
 
-int posicaoHashingElemento(Elemento E){
+int posicaoHashingElemento(Elemento *E){
 
 }
 
@@ -13,18 +13,18 @@ int validarPosicaoHashing(int pos){
 
 }
 
-void inserirElementoHashing(Hashing H, Elemento ele_inserir){
+void inserirElementoHashing(Hashing *H, Elemento *eleInserir){
 
 }
 
-Elemento removerElementoHashing(Hashing H, Elemento ele_remover){
+Elemento removerElementoHashing(Hashing *H, Elemento *eleRemover){
 
 }
 
-Elemento pesquisarElementoHashing(Hashing H, Elemento ele_pesquisa){
+Elemento pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa){
 
 }
 
-void mostrarElementosHashing(Hashing H){
+void mostrarElementosHashing(Hashing *H){
 
 }

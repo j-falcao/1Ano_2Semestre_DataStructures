@@ -1,46 +1,52 @@
 #include "Listas.h"
 
 
-void criarLista(){
-
+Lista *criarLista(){
+    Lista *novaLista = (Lista*) malloc(sizeof(Lista));
+    novaLista->head = NULL;
+    novaLista->quantidadeElementos = 0;
+    return novaLista;
 }
 
-void criarElemento(){
-
+Elemento *criarElemento(){
+    Elemento *novoElemento = (Elemento*) malloc(sizeof(Elemento));
+    novoElemento->pessoa = NULL;
+    novoElemento->next = NULL;
+    return novoElemento;
 }
 
 void ler_elemento(Elemento eleNovo){
-    
+    eleNovo.pessoa = gerarPessoaAleatoria();
 }
 
-int compararElementosIdade(Elemento A, Elemento B){
-
-}
-
-int elementosIguais(Elemento A, Elemento B){
+int compararElementosIdade(Elemento *A, Elemento *B){
 
 }
 
-void inserirElementoOrdenadoIdade(Lista L, Elemento eleNovo){
+int elementosIguais(Elemento *A, Elemento *B){
 
 }
 
-Elemento pesquisarElemento(Lista L, Elemento elePesquisar){
+void inserirElementoOrdenadoIdade(Lista *L, Elemento *eleNovo){
 
 }
 
-void libertarElemento(Elemento ele_libertar){
+Elemento pesquisarElemento(Lista *L, Elemento *elePesquisar){
 
 }
 
-Elemento removerElemento(Lista L, Elemento ele_remover){
+void libertarElemento(Elemento *eleLibertar){
 
 }
 
-void mostrarElemento(Elemento ele_mostrar){
+Elemento removerElemento(Lista *L, Elemento *eleRemover){
 
 }
 
-void mostrarOrdenado(Lista L){
+void mostrarElemento(Elemento *eleMostrar){
+
+}
+
+void mostrarOrdenado(Lista *L){
 
 }

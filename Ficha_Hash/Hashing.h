@@ -12,12 +12,12 @@ typedef struct{
     Grupo hash[10];
 }Hashing;
 
-void inicializarVectorHashing(Hashing H);
-int posicaoHashingElemento(Elemento E);
+void inicializarVectorHashing(Hashing *H);
+int posicaoHashingElemento(Elemento *E);
 int validarPosicaoHashing(int pos);
-void inserirElementoHashing(Hashing H, Elemento ele_inserir);
-Elemento removerElementoHashing(Hashing H, Elemento ele_remover);
-Elemento pesquisarElementoHashing(Hashing H, Elemento ele_pesquisa);
-void mostrarElementosHashing(Hashing H);
+void inserirElementoHashing(Hashing *H, Elemento *eleInserir);
+Elemento removerElementoHashing(Hashing *H, Elemento *eleRemover);
+Elemento pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa);
+void mostrarElementosHashing(Hashing *H);
 
 #endif
