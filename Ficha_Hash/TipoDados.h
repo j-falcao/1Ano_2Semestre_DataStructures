@@ -1,7 +1,9 @@
 #ifndef TIPODADOS_H_INCLUDED
 #define TIPODADOS_H_INCLUDED
 
-#include "../Uteis.c"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 typedef struct{
     char nome[20];
@@ -9,6 +11,8 @@ typedef struct{
     float peso_quilos, altura_metros;
 }Pessoa;
 
-Pessoa gerarPessoaAleatoria();
+Pessoa* gerarPessoaAleatoria();
 
+extern int IdConsecutivo;
+extern int Aleatorio(int min, int max);
 #endif
