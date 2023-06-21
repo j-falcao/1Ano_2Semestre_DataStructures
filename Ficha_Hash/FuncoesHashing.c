@@ -41,14 +41,42 @@ void inserirElementoHashing(Hashing *H, Elemento *eleInserir){
 }
 
 Elemento* removerElementoHashing(Hashing *H, Elemento *eleRemover){
+    if(!H){
+        printf("\n\tError! Given Hashing is NULL\n");
+        return;
+    }
+    if(!eleRemover){
+        printf("\n\tError! Given element is NULL\n");
+        return;
+    }
+    int posHash = posicaoHashingElemento(eleRemover);
 
+    if(validarPosicaoHashing(posHash))
+        return removerElemento(H->hash[posHash]->listaPessoas, eleRemover);
 }
 
 Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa){
+    if(!H){
+        printf("\n\tError! Given Hashing is NULL\n");
+        return;
+    }
+    if(!elePesquisa){
+        printf("\n\tError! Given element is NULL\n");
+        return;
+    }
+    int posHash = posicaoHashingElemento(elePesquisa);
 
+    if(validarPosicaoHashing(posHash))
+        return removerElemento(H->hash[posHash]->listaPessoas, elePesquisa);
 }
 
 void mostrarElementosHashing(Hashing *H){
+    if(!H){
+        printf("\n\tError! Given Hashing is NULL\n");
+        return;
+    }
 
+    for(int i = 0; i < 10; i++)
+        mostrarOrdenado(H->hash[i]->listaPessoas);
 }
    
