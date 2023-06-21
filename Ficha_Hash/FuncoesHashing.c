@@ -67,7 +67,7 @@ Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa){
     int posHash = posicaoHashingElemento(elePesquisa);
 
     if(validarPosicaoHashing(posHash))
-        return removerElemento(H->hash[posHash]->listaPessoas, elePesquisa);
+        return pesquisarElemento(H->hash[posHash]->listaPessoas, elePesquisa);
 }
 
 void mostrarElementosHashing(Hashing *H){

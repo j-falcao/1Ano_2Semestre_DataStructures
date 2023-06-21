@@ -16,6 +16,7 @@ typedef struct{
 Lista* criarLista();
 Elemento* criarElemento();
 void ler_elemento(Elemento *eleNovo);
+void ler_elemento_manual(Elemento* eleNovo);
 int compararElementosIdade(Elemento *A, Elemento *B);
 int elementosIguais(Elemento *A, Elemento *B);
 void inserirElementoOrdenadoIdade(Lista *L, Elemento *eleNovo);
@@ -24,7 +25,5 @@ void libertarElemento(Elemento *eleLibertar);
 Elemento* removerElemento(Lista *L, Elemento *eleRemover);
 void mostrarElemento(Elemento *eleMostrar);
 void mostrarOrdenado(Lista *L);
-
-
 
 #endif

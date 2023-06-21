@@ -19,6 +19,25 @@ void ler_elemento(Elemento *eleNovo){
     eleNovo->pessoa = gerarPessoaAleatoria();
 }
 
+void ler_elemento_manual(Elemento* eleNovo){
+    printc("\n\n\t[yellow]AVISO![/yellow] E melhor mostrar o hashing em primeiro lugar!\n");
+    char nome[50];
+    int idade;
+    float altura, peso;
+    printf("\nInsira o nome da pessoa que quer remover: ");
+    scanf("%s", nome);
+    strcpy(eleNovo->pessoa->nome, nome);
+    printf("\nInsira a idade da pessoa que quer remover: ");
+    scanf("%d", &idade);
+    eleNovo->pessoa->idade = idade;
+    printf("\nInsira a altura da pessoa que quer remover: ");
+    scanf("%f", &altura);
+    eleNovo->pessoa->altura_metros = altura;
+    printf("\nInsira o peso da pessoa que quer remover: ");
+    scanf("%f", &peso);
+    eleNovo->pessoa->peso_quilos = peso;
+}
+
 int compararElementosIdade(Elemento *A, Elemento *B){
     if(!A || !B){
         printf("\n\tError! Given Element is NULL.\n");
@@ -125,7 +144,7 @@ void mostrarElemento(Elemento *eleMostrar){
     }
     printf("\n\n");
     
-    printf("\nNOME: %s\tIDADE: %d\tALTURA: %.2f\tPESO: %.2f\n", eleMostrar->pessoa->nome, eleMostrar->pessoa->idade, eleMostrar->pessoa->altura_metros, eleMostrar->pessoa->peso_quilos);
+    printc("\n[green]NOME:[/green] %s\t[green]IDADE:[/green] %d\t[green]ALTURA:[/green] %.2f\t[green]PESO:[/green] %.2f\n", eleMostrar->pessoa->nome, eleMostrar->pessoa->idade, eleMostrar->pessoa->altura_metros, eleMostrar->pessoa->peso_quilos);
 }
 
 void mostrarOrdenado(Lista *L){

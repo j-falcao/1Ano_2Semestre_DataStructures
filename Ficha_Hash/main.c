@@ -7,11 +7,8 @@ int IdPessoaConsecutivo = 0, tamanhoVetorHash = 10;
 
 int main(){
     srand(time(NULL));
-    
-    //TESTES
-    Pessoa* nova = gerarPessoaAleatoria();
-    printf("NOME: %s\tIDADE: %d\tALTURA: %.2f\tPESO: %.2f", nova->nome, nova->idade, nova->altura_metros, nova->peso_quilos);
-
-    /* menuPrincipal(); */
+    Hashing* HashVetor = criarVectorHashing();
+    inicializarVectorHashing(HashVetor);
+    menuPrincipal(HashVetor);
     return 0;
 }
