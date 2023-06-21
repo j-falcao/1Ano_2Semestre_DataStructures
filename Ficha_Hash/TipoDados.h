@@ -25,6 +25,8 @@ typedef struct{
 }Pessoa;
 
 Pessoa* gerarPessoaAleatoria();
+Pessoa* gerarPessoaManual();
+Pessoa* gerarPessoaManualNomeIdade();
 
 extern int IdPessoaConsecutivo;
 extern int Aleatorio(int min, int max);

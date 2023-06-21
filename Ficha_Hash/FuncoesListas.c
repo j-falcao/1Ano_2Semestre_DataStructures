@@ -14,27 +14,17 @@ Elemento* criarElemento(){
     return novoElemento;
 }
 
-void ler_elemento(Elemento *eleNovo){
+void lerElemento(Elemento *eleNovo){
     eleNovo->pessoa = gerarPessoaAleatoria();
 }
 
-void ler_elemento_manual(Elemento* eleNovo){
-    printc("\n\n\t[yellow]AVISO![/yellow] E melhor mostrar o hashing em primeiro lugar!\n");
-    char nome[50];
-    int idade;
-    float altura, peso;
-    printf("\nInsira o nome da pessoa que quer remover: ");
-    scanf("%s", nome);
-    strcpy(eleNovo->pessoa->nome, nome);
-    printf("\nInsira a idade da pessoa que quer remover: ");
-    scanf("%d", &idade);
-    eleNovo->pessoa->idade = idade;
-    printf("\nInsira a altura da pessoa que quer remover: ");
-    scanf("%f", &altura);
-    eleNovo->pessoa->altura_metros = altura;
-    printf("\nInsira o peso da pessoa que quer remover: ");
-    scanf("%f", &peso);
-    eleNovo->pessoa->peso_quilos = peso;
+
+void lerElementoManual(Elemento* eleNovo){
+    eleNovo->pessoa = gerarPessoaManual();
+}
+
+void lerElementoManualNomeIdade(Elemento* eleNovo){
+    eleNovo->pessoa = gerarPessoaManualNomeIdade();
 }
 
 int compararElementosIdade(Elemento *A, Elemento *B){
@@ -54,7 +44,7 @@ int elementosIguais(Elemento *A, Elemento *B){
         return 0;
     }
 
-    if(strcmp(A->pessoa->nome, B->pessoa->nome) && A->pessoa->idade == B->pessoa->idade && A->pessoa->altura_metros == B->pessoa->altura_metros && A->pessoa->peso_quilos == B->pessoa->peso_quilos)
+    if(strcmp(A->pessoa->nome, B->pessoa->nome) == 0 && A->pessoa->idade == B->pessoa->idade && A->pessoa->altura_metros == B->pessoa->altura_metros && A->pessoa->peso_quilos == B->pessoa->peso_quilos)
         return 1;
     return 0;
 }
@@ -68,18 +58,27 @@ void inserirElementoOrdenadoIdade(Lista *L, Elemento *eleNovo){
         printf("\n\tError! Given element is NULL.\n");
         return;
     }
+    if(L->head == NULL){
+        L->head = eleNovo;
+        L->quantidadeElementos++;
+        return;
+    }
 
-    Elemento *prev = L->head, *curr = L->head;
-    while(curr->pessoa->idade <= eleNovo->pessoa->idade && curr){
+
+    Elemento *prev = NULL, *curr = L->head;
+    while(curr->pessoa->idade <= eleNovo->pessoa->idade){
         prev = curr;
         curr = curr->next;
+        if(!curr)
+            break;
     }
-    if(prev == curr)
+    if(prev == NULL){
         L->head = eleNovo;
+    }
     else if(!elementosIguais(prev, eleNovo)){
         prev->next = eleNovo;
-        eleNovo = curr;
     }
+    eleNovo->next = curr;
     L->quantidadeElementos++;
 }
 
@@ -95,7 +94,28 @@ Elemento* pesquisarElemento(Lista *L, Elemento *elePesquisar){
 
     Elemento *aux = L->head;
     while(aux){
-        if(elementosIguais(aux, elePesquisar)) return aux;
+        if(elementosIguais(aux, elePesquisar)) 
+            return aux;
+        aux = aux->next;
+    }
+    return NULL;
+}
+
+Elemento* pesquisarElementoAutoComplete(Lista *L, Elemento *elePesquisar){
+    if(!L){
+        printf("\n\tError! Given lista is NULL.\n");
+        return NULL;
+    }
+    if(!elePesquisar){
+        printf("\n\tError! Given element is NULL.\n");
+        return NULL;
+    }
+
+    Elemento *aux = L->head;
+    while(aux){
+        if(strcmp(aux->pessoa->nome, elePesquisar->pessoa->nome) == 0) 
+            return aux;
+        aux = aux->next;
     }
     return NULL;
 }
@@ -134,6 +154,7 @@ Elemento* removerElemento(Lista *L, Elemento *eleRemover){
         prev->next = prev->next->next;
     }
     L->quantidadeElementos--;
+    printf("[green]\n\tElemento removido com sucesso![/green]\n");
     return removido;
 }
 
@@ -142,9 +163,8 @@ void mostrarElemento(Elemento *eleMostrar){
         printf("\n\tError! Given element is NULL.\n");
         return;
     }
-    printf("\n\n");
     
-    printc("\n[green]NOME:[/green] %s\t[green]IDADE:[/green] %d\t[green]ALTURA:[/green] %.2f\t[green]PESO:[/green] %.2f\n", eleMostrar->pessoa->nome, eleMostrar->pessoa->idade, eleMostrar->pessoa->altura_metros, eleMostrar->pessoa->peso_quilos);
+    printc("\n\t[green]NOME:[/green] %s  [green]IDADE:[/green] %d  [green]ALTURA:[/green] %.2f  [green]PESO:[/green] %.2f\n", eleMostrar->pessoa->nome, eleMostrar->pessoa->idade, eleMostrar->pessoa->altura_metros, eleMostrar->pessoa->peso_quilos);
 }
 
 void mostrarOrdenado(Lista *L){
@@ -152,10 +172,11 @@ void mostrarOrdenado(Lista *L){
         printf("\n\tError! Given lista is NULL.\n");
         return;
     }
-    printf("\n\n");
+    printf("\n");
 
     Elemento *Aux = L->head;
     while(Aux){
         mostrarElemento(Aux);
+        Aux = Aux->next;
     }
 }

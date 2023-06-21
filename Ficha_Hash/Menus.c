@@ -3,9 +3,9 @@
 int menuPrincipal(Hashing* HashVetor){
     int opcao;
     do{
-        int i = 0;
+        int i = 1;
         printc("**************************************************\n");
-        printc("****************   [blue]Menu Funcionário[/blue]  *************\n");
+        printc("***************   [blue]Menu Funcionario[/blue]  *************\n");
         printc("**************************************************\n");
         printc("**        [blue]%d [/blue]-> Inserir elemento hashing         **\n", i++);
         printc("**        [blue]%d [/blue]-> Remover elemento hashing         **\n", i++);
@@ -13,27 +13,27 @@ int menuPrincipal(Hashing* HashVetor){
         printc("**        [blue]%d [/blue]-> Pesquisar elemento hashing       **\n", i++);
         printc("**************************************************\n");
         do{
-            printf("Qual a opção que pretende? ");
+            printf("Qual a opcao que pretende? ");
             scanf("%d", &opcao);
-        }while(opcao < 0 && opcao > 3);
+        }while(opcao < 1 || opcao > 4);
 
         i = 1;
         if (opcao == i++){
             Elemento *novoElemento = criarElemento();
-            ler_elemento(novoElemento);
+            lerElemento(novoElemento);
             inserirElementoHashing(HashVetor, novoElemento);
         }
         if (opcao == i++){
             Elemento *novoElemento = criarElemento();
-            ler_elemento_manual(novoElemento);
-            removerElementoHashing(HashVetor, pesquisarElementoHashing(HashVetor, novoElemento));
+            lerElementoManualNomeIdade(novoElemento);
+            libertarElemento(removerElementoHashing(HashVetor, pesquisarElementoHashing(HashVetor, novoElemento)));
         }
         if (opcao == i++){
             mostrarElementosHashing(HashVetor);
         }
         if (opcao == i++){
             Elemento *novoElemento = criarElemento();
-            ler_elemento_manual(novoElemento);
+            lerElementoManualNomeIdade(novoElemento);
             mostrarElemento(pesquisarElementoHashing(HashVetor, novoElemento));
         }
     } while (opcao != 0);

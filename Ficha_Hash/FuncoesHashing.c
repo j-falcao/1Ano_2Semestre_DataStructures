@@ -46,7 +46,7 @@ Elemento* removerElementoHashing(Hashing *H, Elemento *eleRemover){
         return NULL;
     }
     if(!eleRemover){
-        printf("\n\tError! Given element is NULL\n");
+        printf("\n\tError! Given element is NULLyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\n");
         return NULL;
     }
     int posHash = posicaoHashingElemento(eleRemover);
@@ -62,13 +62,12 @@ Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa){
         return NULL;
     }
     if(!elePesquisa){
-        printf("\n\tError! Given element is NULL\n");
+        printf("\n\tError! Given element is NULLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
         return NULL;
     }
     int posHash = posicaoHashingElemento(elePesquisa);
-
     if(validarPosicaoHashing(posHash))
-        return pesquisarElemento(H->hash[posHash].listaPessoas, elePesquisa);
+        return pesquisarElementoAutoComplete(H->hash[posHash].listaPessoas, elePesquisa);
     return NULL;
 }
 
@@ -78,7 +77,11 @@ void mostrarElementosHashing(Hashing *H){
         return;
     }
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 10; i++){
+        if(H->hash[i].listaPessoas->head)
+            printf("\nFaixa etaria: %d - %d", i*10, (i+1)*10);
         mostrarOrdenado(H->hash[i].listaPessoas);
+    }
+        
 }
    
