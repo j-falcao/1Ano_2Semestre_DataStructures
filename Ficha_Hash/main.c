@@ -9,6 +9,7 @@ int main(){
     srand(time(NULL));
     Hashing* HashVetor = criarVectorHashing();
     inicializarVectorHashing(HashVetor);
+    printf("teste");
     menuPrincipal(HashVetor);
     return 0;
 }

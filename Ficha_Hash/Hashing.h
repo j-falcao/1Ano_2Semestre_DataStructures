@@ -9,7 +9,7 @@ typedef struct{
 }Grupo;
 
 typedef struct{
-    Grupo *hash[10];
+    Grupo hash[10];
 }Hashing;
 
 Hashing* criarVectorHashing();

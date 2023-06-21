@@ -10,8 +10,8 @@ void inicializarVectorHashing(Hashing *H){
         return;
     }
     for(int i = 0; i < 10; i++){
-        H->hash[i]->faixaEtaria = i;
-        H->hash[i]->listaPessoas = criarLista();
+        H->hash[i].faixaEtaria = i;
+        H->hash[i].listaPessoas = criarLista();
     }
 }
 
@@ -37,37 +37,39 @@ void inserirElementoHashing(Hashing *H, Elemento *eleInserir){
     int posHash = posicaoHashingElemento(eleInserir);
 
     if(validarPosicaoHashing(posHash))
-        inserirElementoOrdenadoIdade(H->hash[posHash]->listaPessoas, eleInserir);
+        inserirElementoOrdenadoIdade(H->hash[posHash].listaPessoas, eleInserir);
 }
 
 Elemento* removerElementoHashing(Hashing *H, Elemento *eleRemover){
     if(!H){
         printf("\n\tError! Given Hashing is NULL\n");
-        return;
+        return NULL;
     }
     if(!eleRemover){
         printf("\n\tError! Given element is NULL\n");
-        return;
+        return NULL;
     }
     int posHash = posicaoHashingElemento(eleRemover);
 
     if(validarPosicaoHashing(posHash))
-        return removerElemento(H->hash[posHash]->listaPessoas, eleRemover);
+        return removerElemento(H->hash[posHash].listaPessoas, eleRemover);
+    return NULL;
 }
 
 Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa){
     if(!H){
         printf("\n\tError! Given Hashing is NULL\n");
-        return;
+        return NULL;
     }
     if(!elePesquisa){
         printf("\n\tError! Given element is NULL\n");
-        return;
+        return NULL;
     }
     int posHash = posicaoHashingElemento(elePesquisa);
 
     if(validarPosicaoHashing(posHash))
-        return pesquisarElemento(H->hash[posHash]->listaPessoas, elePesquisa);
+        return pesquisarElemento(H->hash[posHash].listaPessoas, elePesquisa);
+    return NULL;
 }
 
 void mostrarElementosHashing(Hashing *H){
@@ -77,6 +79,6 @@ void mostrarElementosHashing(Hashing *H){
     }
 
     for(int i = 0; i < 10; i++)
-        mostrarOrdenado(H->hash[i]->listaPessoas);
+        mostrarOrdenado(H->hash[i].listaPessoas);
 }
    

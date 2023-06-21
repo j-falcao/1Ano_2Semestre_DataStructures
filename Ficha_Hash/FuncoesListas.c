@@ -1,6 +1,5 @@
 #include "Listas.h"
 
-
 Lista* criarLista(){
     Lista *novaLista = (Lista*) malloc(sizeof(Lista));
     novaLista->head = NULL;
@@ -135,6 +134,7 @@ Elemento* removerElemento(Lista *L, Elemento *eleRemover){
         prev->next = prev->next->next;
     }
     L->quantidadeElementos--;
+    return removido;
 }
 
 void mostrarElemento(Elemento *eleMostrar){
