@@ -9,15 +9,18 @@ typedef struct{
 }Grupo;
 
 typedef struct{
-    Grupo hash[10];
+    Grupo *hash;
 }Hashing;
 
+Hashing* criarVectorHashing();
 void inicializarVectorHashing(Hashing *H);
 int posicaoHashingElemento(Elemento *E);
 int validarPosicaoHashing(int pos);
 void inserirElementoHashing(Hashing *H, Elemento *eleInserir);
-Elemento removerElementoHashing(Hashing *H, Elemento *eleRemover);
-Elemento pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa);
+Elemento* removerElementoHashing(Hashing *H, Elemento *eleRemover);
+Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa);
 void mostrarElementosHashing(Hashing *H);
 
+
+extern int tamanhoVetorHash;
 #endif

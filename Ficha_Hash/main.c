@@ -3,7 +3,7 @@
 #include "Hashing.h"
 #include "Menus.h"
 
-int IdConsecutivo = 0;
+int IdPessoaConsecutivo = 0, tamanhoVetorHash = 10;
 
 int main(){
     srand(time(NULL));
