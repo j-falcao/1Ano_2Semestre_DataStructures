@@ -9,7 +9,7 @@ typedef struct{
 }Grupo;
 
 typedef struct{
-    Grupo *hash;
+    Grupo *hash[10];
 }Hashing;
 
 Hashing* criarVectorHashing();
@@ -20,7 +20,6 @@ void inserirElementoHashing(Hashing *H, Elemento *eleInserir);
 Elemento* removerElementoHashing(Hashing *H, Elemento *eleRemover);
 Elemento* pesquisarElementoHashing(Hashing *H, Elemento *elePesquisa);
 void mostrarElementosHashing(Hashing *H);
-
 
 extern int tamanhoVetorHash;
 #endif
