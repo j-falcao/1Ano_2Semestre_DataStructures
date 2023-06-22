@@ -30,8 +30,4 @@ int countNodes(Tree* T);
 int countNodeAgeGreaterThan(Tree* T, int age);
 int countNodeWeightLessThan(Tree* T, float MaxWeight);
 int HeightTree(Tree* T);
-
-
-
-
 #endif
