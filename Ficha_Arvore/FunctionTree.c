@@ -73,12 +73,12 @@ void insertRight(Node* root, Node* nodeToInsert){
 }
 
 void insertNode(Tree* T, Node* newNode){
-    if(!newNode){
-        printc("\n\t[red]Error![/red] Given node is NULL\n");
-        return;
-    }
     if(!T){
         printc("\n\t[red]Error![/red] Given tree is NULL\n");
+        return;
+    }
+    if(!newNode){
+        printc("\n\t[red]Error![/red] Given node is NULL\n");
         return;
     }
     if(!T->root)
@@ -92,16 +92,47 @@ void insertNode(Tree* T, Node* newNode){
     T->numNodes++;
 }
 
+Node* searchByAgeRecursive(Node* root, int age){
+    if(!root){
+        printc("\n\t[red]Error![/red] Given node is NULL\n");
+        return NULL;
+    }
+
+    if(age > root->info->age)
+        return searchByAgeRecursive(root->right, age);
+    else if(age < root->info->age)
+        return searchByAgeRecursive(root->left, age);
+    return root;
+}
+
 Node* searchByAge(Tree* T, int age){
-    
+    if(!T){
+        printc("\n\t[red]Error![/red] Given tree is NULL\n");
+        return NULL;
+    }
+    if(!T->root){
+        printc("\n\t[red]Error![/red] Given tree is empty\n");
+        return NULL;
+    }
+
+    if(age > T->root->info->age)
+        return searchByAgeRecursive(T->root->right, age);
+    else if(age < T->root->info->age)
+        return searchByAgeRecursive(T->root->left, age);
+    return T->root;
 }
 
 void printNode(Node* node){
+    if(!node){
+        printc("\n\t[red]Error![/red] Given node is NULL\n");
+        return;
+    }
 
+    printf("\nName: %s\tAge: %d\tWeight: %.2f\tHeight: %.2f\n");
 }
 
 void mostrarInOrder(Node* root){
-
+    
 }
 
 void mostrarPreOrder(Node* root){
