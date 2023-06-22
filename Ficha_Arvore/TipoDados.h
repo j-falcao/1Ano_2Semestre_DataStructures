@@ -18,16 +18,10 @@ void progress_start(int max, char *fmt);
 void progress_update();
 #endif
 
-typedef struct{
-    char nome[20];
-    int idade;
-    float peso_quilos, altura_metros;
-}Pessoa;
 
-Pessoa* gerarPessoaAleatoria();
-Pessoa* gerarPessoaManual();
-Pessoa* gerarPessoaManualNomeIdade();
 
-extern int IdPessoaConsecutivo;
+
+
+
 extern int Aleatorio(int min, int max);
 #endif
