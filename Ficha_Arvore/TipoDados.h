@@ -28,4 +28,5 @@ typedef struct{
 Person* generateRandomPerson();
 
 extern int Aleatorio(int min, int max);
+extern int IdPessoaConsecutivo;
 #endif

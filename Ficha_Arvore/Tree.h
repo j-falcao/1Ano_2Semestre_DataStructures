@@ -16,7 +16,6 @@ typedef struct{
 Tree* createTree();
 Node* createNode();
 void WriteToNode(Node* node);
-int compareNodeByAge(Node* A, Node* B);
 int SameNodesByAge(Node* A, Node* B);
 void InsertNode(Tree* T, Node* newNode);
 Node* searchByAge(Tree* T, int age);
