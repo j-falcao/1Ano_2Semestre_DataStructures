@@ -38,12 +38,62 @@ int SameNodesByAge(Node* A, Node* B){
     return 0;
 }
 
-void InsertNode(Tree* T, Node* newNode){
-    
+void insertLeft(Node* root, Node* nodeToInsert){
+    if(!root){
+        printc("\n\t[red]Error![/red] Given node 'root' is NULL\n");
+        return;
+    }
+    if(!nodeToInsert){
+        printc("\n\t[red]Error![/red] Given node 'nodeToInsert' is NULL\n");
+        return;
+    }
+    if(!root->left)
+        root->left = nodeToInsert;
+    if(nodeToInsert->info->age > root->left->info->age)
+        insertRight(root->left, nodeToInsert);
+    if(nodeToInsert->info->age < root->left->info->age)
+        insertLeft(root->left, nodeToInsert);
+}
+
+void insertRight(Node* root, Node* nodeToInsert){
+    if(!root){
+        printc("\n\t[red]Error![/red] Given node 'root' is NULL\n");
+        return;
+    }
+    if(!nodeToInsert){
+        printc("\n\t[red]Error![/red] Given node 'nodeToInsert' is NULL\n");
+        return;
+    }
+    if(!root->right)
+        root->right = nodeToInsert;
+    if(nodeToInsert->info->age > root->right->info->age)
+        insertRight(root->right, nodeToInsert);
+    if(nodeToInsert->info->age < root->right->info->age)
+        insertLeft(root->right, nodeToInsert);
+}
+
+void insertNode(Tree* T, Node* newNode){
+    if(!newNode){
+        printc("\n\t[red]Error![/red] Given node is NULL\n");
+        return;
+    }
+    if(!T){
+        printc("\n\t[red]Error![/red] Given tree is NULL\n");
+        return;
+    }
+    if(!T->root)
+        T->root = newNode;
+    else{
+        if(newNode->info->age > T->root->info->age)
+            insertRight(T->root, newNode);
+        if(newNode->info->age < T->root->info->age)
+            insertLeft(T->root, newNode);
+    }
+    T->numNodes++;
 }
 
 Node* searchByAge(Tree* T, int age){
-
+    
 }
 
 void printNode(Node* node){

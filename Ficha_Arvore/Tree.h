@@ -17,7 +17,7 @@ Tree* createTree();
 Node* createNode();
 void WriteToNode(Node* node);
 int SameNodesByAge(Node* A, Node* B);
-void InsertNode(Tree* T, Node* newNode);
+void insertNode(Tree* T, Node* newNode);
 Node* searchByAge(Tree* T, int age);
 void printNode(Node* node);
 void mostrarInOrder(Node* root);
