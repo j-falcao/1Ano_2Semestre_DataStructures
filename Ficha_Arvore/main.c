@@ -1,4 +1,9 @@
 #include "TipoDados.h"
-#include "Arvores.h"
-#include "Hashing.h"
-#include "Menus.h"
+#include "Tree.h"
+#include "Menu.h"
+
+int main(){
+    srand(time(NULL));
+
+    return 0;
+}

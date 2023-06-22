@@ -19,9 +19,13 @@ void progress_update();
 #endif
 
 
+typedef struct{
+    char name[20];
+    int age;
+    float weight, height;
+}Person;
 
-
-
+Person* generateRandomPerson();
 
 extern int Aleatorio(int min, int max);
 #endif
