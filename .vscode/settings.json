@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    "stdio.h": "c",
+    "tiposdados.h": "c",
+    "tipodados.h": "c",
+    "tipo_carro.h": "c",
+    "lista.h": "c",
+    "string.h": "c",
+    "tipodadospapel.h": "c",
+    "conta_bancaria.h": "c",
+    "stdlib.h": "c",
+    "math.h": "c",
+    "listas.h": "c"
+  },
+  "files.exclude": {}
+}

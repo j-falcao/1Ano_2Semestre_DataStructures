@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1679577036 source:c:\users\fmorgado\desktop\teorica_23_03_2023\listagenerica.c
+	"ListaGenerica.h"
+
+1679571915 c:\users\fmorgado\desktop\teorica_23_03_2023\listagenerica.h
+	<stdio.h>
+	<stdlib.h>
+
+1679577099 source:c:\users\fmorgado\desktop\teorica_23_03_2023\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Tiposdados.h"
+	"ListaGenerica.h"
+
+1679577036 source:c:\users\fmorgado\desktop\teorica_23_03_2023\funcoes.c
+	"Tiposdados.h"
+
+1679577036 c:\users\fmorgado\desktop\teorica_23_03_2023\tiposdados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,7 @@
+9
+Nome: Aluno-10
+Numero Mecanografico: 18772
+5
+Nome UC: UC-5
+Nota: 20
+--------------------
